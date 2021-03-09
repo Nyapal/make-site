@@ -2,10 +2,16 @@ package main
 
 import (
 	"fmt"
-	"os"
-	"html/template"
+	// "os"
+	// "io"
+	"io/ioutil"
 )
 
 func main() {
-	fmt.Println("Hello, world!")
+	file, err := ioutil.ReadFile("first-post.txt")
+	if err != nil {
+		fmt.Print("No Issues")
+	}
+	fmt.Print(string(file))
+	// fmt.Println("Hello, world!") // Print some ish 
 }
